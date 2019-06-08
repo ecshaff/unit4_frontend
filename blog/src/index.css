@@ -13,6 +13,28 @@
  =======================*/
 header {
     border: 2px solid var(--light-pink);
+    /* text-align: center; */
+}
+
+ul {
+    list-style: none;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: flex-start; */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--light-pink);
+}
+
+li {
+    display: inline;
+    padding: 0.5em;
+    background-color: var(--light-pink);
+}
+
+li:hover {
+    background-color: var(--yellow);
 }
 
 /* ======================
@@ -49,7 +71,7 @@ input[type="submit"]:hover {
     border: 2px solid var(--magenta);
     margin: 1em;
     padding: 1em;
-    
+
 }
 
 /* ======================
