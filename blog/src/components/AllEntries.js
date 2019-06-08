@@ -12,7 +12,14 @@ class AllEntries extends Component {
     render() {
         return (
             <div className="all-entries">
-                <Entry />
+            { this.props.entries.map((entry, index) => {
+                return (
+                    <Entry
+                    key={index}
+                    entry={entry}
+                    />
+                )
+            })}
             </div>
         );
     }

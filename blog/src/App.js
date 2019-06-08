@@ -13,16 +13,42 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentView: 'all'
+            currentView: 'all',
+            entries: []
         }
         // method binding
         this.handleView = this.handleView.bind(this);
+        this.fetchEntries = this.fetchEntries.bind(this);
+        this.setEntries = this.setEntries.bind(this);
     }
 
     // method to change views
     handleView(view) {
         this.setState( { currentView: view } )
     }
+
+    // method to retreive data from API on load
+    componentDidMount() {
+
+    }
+
+    // API call
+    fetchEntries() {
+        // fetch()
+        // .then(data => data.json())
+        // .then(jData => {
+        //     console.log(jData)
+        //     this.setEntries(jdata)
+        // })
+    }
+
+    // method to set state
+    setEntries(entries) {
+        this.setState({
+            entries: entries
+        })
+    }
+
     render() {
         return (
           <div className="App">
@@ -31,7 +57,10 @@ class App extends Component {
             handleView={this.handleView}
             />
             <EntryForm />
-            <AllEntries currentView={this.state.currentView} />
+            <AllEntries
+            currentView={this.state.currentView}
+            entries={this.state.entries}
+            />
 
           </div>
         );

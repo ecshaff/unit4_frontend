@@ -20,7 +20,7 @@ class Header extends Component {
                     </h2>
                     <ul className='nav-bar'>
                         <li onClick={ () => {this.props.handleView('all')} }>All</li>
-                        <li onClick={ () => {this.props.handleView('new')} }>New</li>
+                        <li onClick={ () => {this.props.handleView('newer')} }>New</li>
                         <li onClick={ () => {this.props.handleView('old')} }>Old</li>
                     </ul>
             </header>
