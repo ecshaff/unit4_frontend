@@ -7,16 +7,18 @@ import React , { Component } from 'react';
 // =================
 // COMPONENT
 // =================
-class Entry_Form extends Component {
+class EntryForm extends Component {
     constructor(props) {
         super(props)
         this.state = {}
     }
     render() {
         return (
-            <div className="form-box">
-                create entry
-            </div>
+            <form>
+                <fieldset>
+                    <legend>Create New Entry</legend>
+                </fieldset>
+            </form>
         );
     }
 }
@@ -24,4 +26,4 @@ class Entry_Form extends Component {
 // ================
 // EXPORT
 // ================
-export default Entry_Form;
+export default EntryForm;

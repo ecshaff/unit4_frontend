@@ -3,7 +3,8 @@
 // ================
 import React , { Component } from 'react';
 import Header from './components/Header';
-import Entry_Form from './components/Entry_Form';
+import EntryForm from './components/EntryForm';
+import AllEntries from './components/AllEntries';
 
 // =================
 // COMPONENT
@@ -17,7 +18,8 @@ class App extends Component {
         return (
           <div className="App">
             <Header />
-            <Entry_Form />
+            <EntryForm />
+            <AllEntries />
 
           </div>
         );
