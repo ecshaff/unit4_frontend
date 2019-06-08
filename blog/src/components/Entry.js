@@ -10,8 +10,20 @@ import React , { Component } from 'react';
 class Entry extends Component {
     render() {
         return (
-            <div className="entry">
-                one entry here
+            <div className='entry-container'>
+                <div className='entry'>
+                    <h2>{ this.props.entry.title }</h2>
+                    <h3>{ this.props.entry.date }</h3>
+                    <h3>{ this.props.entry.author }</h3>
+                    <h3>{ this.props.entry.status }</h3>
+                    <p>{ this.props.entry.text }</p>
+                    <img src={ this.props.entry.image } />
+                </div>
+
+                <div className='entry-action'>
+                    <button>Delete</button>
+                    <button>Edit</button>
+                </div>
             </div>
         );
     }
