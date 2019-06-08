@@ -2,23 +2,21 @@
 // DEPENDENCIES
 // ================
 import React , { Component } from 'react';
-import Header from './components/Header';
+
 
 // =================
 // COMPONENT
 // =================
-class App extends Component {
+class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {}
     }
     render() {
         return (
-          <div className="App">
-            <Header />
-
-
-          </div>
+            <header>
+                <h1>Blog App</h1>
+            </header>
         );
     }
 }
@@ -26,4 +24,4 @@ class App extends Component {
 // ================
 // EXPORT
 // ================
-export default App;
+export default Header;
