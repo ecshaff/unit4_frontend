@@ -1,4 +1,4 @@
 # unit4_frontend
 Team:
 Emmy Shaffer
-Lauren
+Lauren Mellon
