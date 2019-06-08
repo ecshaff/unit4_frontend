@@ -12,14 +12,26 @@ import AllEntries from './components/AllEntries';
 class App extends Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            currentView: 'all'
+        }
+        // method binding
+        this.handleView = this.handleView.bind(this);
+    }
+
+    // method to change views
+    handleView(view) {
+        this.setState( { currentView: view } )
     }
     render() {
         return (
           <div className="App">
-            <Header />
+            <Header
+            currentView={this.state.currentView}
+            handleView={this.handleView}
+            />
             <EntryForm />
-            <AllEntries />
+            <AllEntries currentView={this.state.currentView} />
 
           </div>
         );
