@@ -19,6 +19,30 @@ class EntryForm extends Component {
             status: 'new'
         }
     }
+
+    // handle change - takes input and gives it to state
+    handleChange = (event) => {
+        this.setState( {[event.target.id]: event.target.value} )
+    }
+
+    // receives info from user input and sends it back up to App
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.handleCreateEntry(this.state)
+        this.clearForm()
+    }
+
+    // clear form after submit
+    clearForm = () => {
+        this.setState ({
+            date: '',
+            title: '',
+            text: '',
+            image: '',
+            author: '',
+        })
+    }
+
     render() {
         return (
             <form>

@@ -49,6 +49,24 @@ class App extends Component {
         })
     }
 
+    // method to create new entry 
+    handleCreateEntry (entry) {
+        // fetch('', {
+        //     body: JSON.stringify(entry),
+        //     method: 'POST',
+        //     headers: {
+        //         'Accept': 'application/json, text/plain, */*',
+        //         'Content-Type': 'application/json'
+        //     }
+        // }).then (createdEntry => {
+        //     return createdEntry.json()
+        // }).then( jData => {
+        //     // not sure if we will use these two methods (depends on how many arrays we have)
+        //     updateArray(jData, array)
+        //     this.handleView()
+        // })
+    }
+
     render() {
         return (
           <div className="App">
