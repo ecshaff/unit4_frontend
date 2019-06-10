@@ -29,17 +29,17 @@ class App extends Component {
 
     // method to retreive data from API on load
     componentDidMount() {
-
+        this.fetchEntries()
     }
 
     // API call
     fetchEntries() {
-        // fetch()
-        // .then(data => data.json())
-        // .then(jData => {
-        //     console.log(jData)
-        //     this.setEntries(jdata)
-        // })
+        fetch('http://localhost:3000/form')
+        .then(data => data.json())
+        .then(jData => {
+            console.log(jData)
+            this.setEntries(jData)
+        })
     }
 
     // method to set state
@@ -69,30 +69,30 @@ class App extends Component {
 
     // method to update array
     updateArray(entry, array) {
-        this.setState( prevState => {
-            prevState[array].push(entry)
-            return { [array]: prevState[array] }
-        })
+        // this.setState( prevState => {
+        //     prevState[array].push(entry)
+        //     return { [array]: prevState[array] }
+        // })
     }
 
     // method to delete entry
     handleDelete(entryId, arrayIndex) {
-        fetch('${entryId}', {
-            method: 'DELETE'
-        }).then(data => {
-            // need to determine if the parameter currentArray is necessary
-            this.removeFromArray(currentArray, arrayIndex)
-        }).catch (error =>
-        console.log("this is your error", error)
-        )
+        // fetch('${entryId}', {
+        //     method: 'DELETE'
+        // }).then(data => {
+        //     // need to determine if the parameter currentArray is necessary
+        //     this.removeFromArray(currentArray, arrayIndex)
+        // }).catch (error =>
+        // console.log("this is your error", error)
+        // )
     }
 
     // method to delete entry from array
     removeFromArray(array, arrayIndex) {
-        this.setState( prevState => {
-            prevState[array].splice(arrayIndex,1)
-            return { [array]: prevState[array] }
-        })
+        // this.setState( prevState => {
+        //     prevState[array].splice(arrayIndex,1)
+        //     return { [array]: prevState[array] }
+        // })
     }
 
     render() {
