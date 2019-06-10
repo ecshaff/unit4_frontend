@@ -17,6 +17,8 @@ class AllEntries extends Component {
                     <Entry
                     key={index}
                     entry={entry}
+                    arrayIndex={index}
+                    handleDelete={this.props.handleDelete}
                     />
                 )
             })}

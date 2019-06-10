@@ -49,7 +49,7 @@ class App extends Component {
         })
     }
 
-    // method to create new entry 
+    // method to create new entry
     handleCreateEntry (entry) {
         // fetch('', {
         //     body: JSON.stringify(entry),
@@ -67,6 +67,34 @@ class App extends Component {
         // })
     }
 
+    // method to update array
+    updateArray(entry, array) {
+        this.setState( prevState => {
+            prevState[array].push(entry)
+            return { [array]: prevState[array] }
+        })
+    }
+
+    // method to delete entry
+    handleDelete(entryId, arrayIndex) {
+        fetch('${entryId}', {
+            method: 'DELETE'
+        }).then(data => {
+            // need to determine if the parameter currentArray is necessary
+            this.removeFromArray(currentArray, arrayIndex)
+        }).catch (error =>
+        console.log("this is your error", error)
+        )
+    }
+
+    // method to delete entry from array
+    removeFromArray(array, arrayIndex) {
+        this.setState( prevState => {
+            prevState[array].splice(arrayIndex,1)
+            return { [array]: prevState[array] }
+        })
+    }
+
     render() {
         return (
           <div className="App">
@@ -74,10 +102,13 @@ class App extends Component {
             currentView={this.state.currentView}
             handleView={this.handleView}
             />
-            <EntryForm />
+            <EntryForm
+            handleCreateEntry={this.handleCreateEntry}
+             />
             <AllEntries
             currentView={this.state.currentView}
             entries={this.state.entries}
+            handleDelete={this.handleDelete}
             />
 
           </div>

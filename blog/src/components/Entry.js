@@ -21,7 +21,7 @@ class Entry extends Component {
                 </div>
 
                 <div className='entry-action'>
-                    <button>Delete</button>
+                    <button onClick={ () => this.props.handleDelete(this.props.entry.id, this.props.arrayIndex) }>Delete</button>
                     <button>Edit</button>
                 </div>
             </div>
